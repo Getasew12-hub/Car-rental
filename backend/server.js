@@ -28,7 +28,7 @@ app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
 console.log("process.env.NODE_ENV",process.env.NODE_ENV); 
 app.use(cors({
-    origin:process.env.NODE_ENV==="development" ? 'http://localhost:3000' :process.env.PRODUCTION_URL,
+    origin:"https://car-rental-two-gamma.vercel.app",
     credentials:true,
 }));
   CloudinaryConfig()
