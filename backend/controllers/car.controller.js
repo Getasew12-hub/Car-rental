@@ -1,4 +1,5 @@
 
+import { ENV_CONFIG } from "../configration/env_config.js";
 import { bookingCarList } from "../modal/bookingCarList.js";
 import { carList } from "../modal/carList.js";
 
@@ -30,6 +31,7 @@ export const getCarListController=async (req,res) => {
 }
 
 export const getFeaturedCarsController=async (req,res) => {
+    console.log("MONOG",ENV_CONFIG.MONGOOSE_URI);
     try {
         const getCars=await carList.find({featuredcars:true}).limit(6).sort({createdAt:-1});
         if(getCars.length==0){
