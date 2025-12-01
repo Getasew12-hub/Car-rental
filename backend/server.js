@@ -35,13 +35,14 @@ app.use(cors({
 
 CloudinaryConfig();
 mongodb(); // Connect to the database when the function starts
+app.use(passport.initialize());
 
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
 app.use("/api/booking",bookingRouter);
 app.use("/api/cars",carRouter);
 
-app.use(passport.initialize());
+
 
 
 // Remove app.listen for serverless deployment
