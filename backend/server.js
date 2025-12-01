@@ -26,13 +26,13 @@ const port=ENV_CONFIG.PORT || 5000;
 app.use(express.urlencoded({extended:true}));
 app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
-
+console.log("process.env.NODE_ENV",process.env.NODE_ENV); 
 app.use(cors({
-    origin:"https://car-rental-two-gamma.vercel.app",
+    origin:process.env.NODE_ENV==="development" ? 'http://localhost:3000' :process.env.PRODUCTION_URL,
     credentials:true,
 }));
   CloudinaryConfig()
-
+mongodb();
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
 app.use("/api/booking",bookingRouter);
@@ -45,5 +45,5 @@ app.use(passport.initialize());
 app.listen(port,()=>{
     console.log("Your server running on port :",port);
 
-    mongodb();
+    
 })
