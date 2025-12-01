@@ -16,6 +16,7 @@ import "./configration/google.auth.js";
 
 
 
+
 const app=express();
 
 const port=ENV_CONFIG.PORT || 5000;
@@ -25,7 +26,7 @@ app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
 
 app.use(cors({
-    origin:'http://localhost:3000',
+     origin: process.env.ENV_MODE === 'development' ? 'http://localhost:3000' : ENV_CONFIG.PRODUCTION_URL,
     credentials:true,
 }));
   CloudinaryConfig()
