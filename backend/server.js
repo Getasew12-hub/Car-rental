@@ -12,6 +12,9 @@ import bookingRouter from "./routers/booking.router.js"
 import carRouter from "./routers/car.router.js";
 import passport from "passport";
 import "./configration/google.auth.js";
+import env from "dotenv";
+env.config();
+
 
 
 
@@ -25,7 +28,7 @@ app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
 
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin:process.env.NODE_ENV==="development" ? 'http://localhost:3000' :process.env.PRODUCTION_URL,
     credentials:true,
 }));
   CloudinaryConfig()
