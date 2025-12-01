@@ -36,6 +36,9 @@ app.use(cors({
 CloudinaryConfig();
 mongodb(); // Connect to the database when the function starts
 app.use(passport.initialize());
+app.get("/",(req,res)=>{
+    res.send("API is working....");
+})
 
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
