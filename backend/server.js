@@ -33,10 +33,15 @@ app.use(cors({
 }));
   CloudinaryConfig()
  mongodb();
+
+ 
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
 app.use("/api/booking",bookingRouter);
 app.use("/api/cars",carRouter);
+app.get("*",(req,res)=>{
+    res.status(404).send("The requested resource not found on this server.");
+});
 
 app.use(passport.initialize());
 
