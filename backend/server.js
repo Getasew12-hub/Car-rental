@@ -33,10 +33,10 @@ app.use(cors({
 }));
   CloudinaryConfig()
  mongodb();
-app.use("/api/auth",authRouter);
-app.use("/api/admin",adminProtectRoute,adminRouter);
-app.use("/api/booking",bookingRouter);
-app.use("/api/cars",carRouter);
+app.use("/auth",authRouter);
+app.use("/admin",adminProtectRoute,adminRouter);
+app.use("/booking",bookingRouter);
+app.use("/cars",carRouter);
 
 app.use(passport.initialize());
 

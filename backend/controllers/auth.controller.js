@@ -8,7 +8,7 @@ function generateToken(res,userid){
     res.cookie("token",token,{
         httpOnly:true,
         secure:process.env.NODE_ENV==="production",
-        sameSite:"strict",
+        sameSite:"None",
         maxAge:7*24*60*60*1000,
     });
 
@@ -99,7 +99,7 @@ export const googleAuth=async(req,res)=>{
     try {
         const userData=req.user;
         await generateToken(res,userData._id);
-        res.redirect("http://localhost:3000");
+        res.redirect(ENV_CONFIG.FRONTEND_URL);
     } catch (error) {
         console.error("Error during Google authentication:",error.message);
         res.status(500).send("Internal Server Error");
