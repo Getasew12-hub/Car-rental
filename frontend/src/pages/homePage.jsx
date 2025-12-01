@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Header from '../commponets/header'
 import FeatureVicle from '../commponets/FeatureVicle'
-import Banner from '../commponets/banner'
+import Banner from '../commponets/Banner'
 import CastomerComment from '../commponets/CastommerComment'
 import Subscribe from '../commponets/Subscribe'
 import Footer from '../commponets/Footer'
