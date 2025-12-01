@@ -24,11 +24,17 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
 
+// The frontend URL will be something like https://<your-project-name>.vercel.app
+// We use an environment variable to make it flexible.
+const frontendURL = ENV_CONFIG.FRONTEND_URL || 'http://localhost:3000';
+
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin: frontendURL,
     credentials:true,
 }));
-  CloudinaryConfig()
+
+CloudinaryConfig();
+mongodb(); // Connect to the database when the function starts
 
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
@@ -38,9 +44,11 @@ app.use("/api/cars",carRouter);
 app.use(passport.initialize());
 
 
+// Remove app.listen for serverless deployment
+// app.listen(port,()=>{
+//     console.log("Your server running on port :",port);
+//     mongodb();
+// })
 
-app.listen(port,()=>{
-    console.log("Your server running on port :",port);
-
-    mongodb();
-})
+// Export the app instance for Vercel
+export default app;
