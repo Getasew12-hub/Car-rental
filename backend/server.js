@@ -44,10 +44,10 @@ app.use("/api/cars",carRouter);
 app.use(passport.initialize());
 
 
-// app.listen(port,()=>{
-//     console.log("Your server running on port :",port);
+app.listen(port,()=>{
+    console.log("Your server running on port :",port);
 
    
-// })
+})
 
 export default app;

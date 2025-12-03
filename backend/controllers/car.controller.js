@@ -30,6 +30,7 @@ export const getCarListController=async (req,res) => {
 }
 
 export const getFeaturedCarsController=async (req,res) => {
+    console.log("featured car controller called");
     try {
         const getCars=await carList.find({featuredcars:true}).limit(6).sort({createdAt:-1});
         if(getCars.length==0){
