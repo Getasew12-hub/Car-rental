@@ -1,17 +1,6 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-   
-      "source": "/api/(.*)",
-      "destination": "/backend/server.js"
-    },
-    {
-     
-      "source": "/(.*)",
-      "destination": "/frontend/dist/index.html"
-    }
-  ],
+  "public": true,
   "builds": [
     {
       "src": "backend/server.js",
@@ -23,6 +12,18 @@
       "config": {
         "outputDirectory": "dist"
       }
+    }
+  ],
+  "rewrites": [
+    {
+  
+      "source": "/api/(.*)",
+      "destination": "/backend/server.js"
+    },
+    {
+  
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
