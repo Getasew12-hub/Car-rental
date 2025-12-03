@@ -4,10 +4,6 @@
     {
       "source": "/api/(.*)",
       "destination": "/backend/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
     }
   ],
   "builds": [
@@ -19,7 +15,7 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "outputDirectory": "dist"
+        "distDir": "dist"
       }
     }
   ]
