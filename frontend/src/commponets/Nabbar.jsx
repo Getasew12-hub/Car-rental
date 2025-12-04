@@ -10,7 +10,7 @@ import { motion } from "motion/react"
 function Nabbar({showLogin}) {
   const mobileview=useRef();
   const {user,LogoutUser}=userStore()
-  const [searchTerm,setSearchTerm]=useState(null);
+ 
   const [mobileOpen,setMobileopen]=useState(false)
        const currentUrl = window.location.pathname;
      useEffect(()=>{
@@ -45,12 +45,7 @@ function Nabbar({showLogin}) {
           <Link to={"/"} className='hover:underline underline-offset-4'>Home</Link>
           <Link to={"/car-list"} className='hover:underline underline-offset-4' >Cars</Link>
         {user &&  <Link to={"/my-booking"} className='hover:underline underline-offset-4' >My booking</Link>}
-            <form >
-          <div className='border border-gray-400 rounded-full py-0.5 px-2 lg:flex justify-between max-w-56 hidden'>
-            <input type="text" name="search" placeholder='Search cars' className='grow w-full outline-none' />
-            <Search  className='text-gray-400 cursor-pointer'/>
-          </div>
-          </form>
+         
             
           
 
