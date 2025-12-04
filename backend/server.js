@@ -34,7 +34,9 @@ app.use(cors({
   CloudinaryConfig()
  mongodb();
 
- 
+ app.get("/",(req,res)=>{
+    res.send("API is running....");
+ });
 app.use("/api/auth",authRouter);
 app.use("/api/admin",adminProtectRoute,adminRouter);
 app.use("/api/booking",bookingRouter);
