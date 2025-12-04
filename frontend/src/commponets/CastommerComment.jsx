@@ -28,10 +28,10 @@ function CatommerComment() {
       key={index}
        className='shadow-lg shadow-gray-500 p-3.5 rounded-md  space-y-2.5' >
       <div className='flex items-center gap-2 ' >
-        <div className='flex justify-center items-center h-14 w-14 rounded-full overflow-hidden bg-black text-white font-bold'> {val?.image ? (<img src="" alt="" />):("n".charAt(0).toUpperCase())} </div>
+        <div className='flex justify-center items-center sm:h-14 sm:w-14 h-10 w-10 rounded-full overflow-hidden bg-black text-white font-bold'> {val?.image ? (<img src="" alt="" />):("n".charAt(0).toUpperCase())} </div>
         <div> 
-          <p className='font-medium text-xl'>Emma Rodriguez</p>
-          <p className='text-gray-400'>Barcelona, Spain</p>
+          <p className='font-medium text-xl max-sm:text-[12px]'>Emma Rodriguez</p>
+          <p className='text-gray-400 max-sm:text-[11px]'>Barcelona, Spain</p>
         </div>
       </div>
 
@@ -44,7 +44,7 @@ function CatommerComment() {
       
       </div>
 
-      <p className='text-gray-500 font-medium '>"I've rented cars from various companies, but the experience with CarRental was exceptional."</p>
+      <p className='text-gray-500 font-medium max-sm:text-sm'>"I've rented cars from various companies, but the experience with CarRental was exceptional."</p>
       </motion.div>)}
       </motion.div>
 

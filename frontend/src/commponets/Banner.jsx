@@ -9,7 +9,7 @@ function Banner() {
     initial={{ y: 50,opacity:0, }}
     whileInView={{ y: 0,opacity:1 }}
     transition={{ duration: 0.5 }}
-     className='w-full py-2.5 px-3.5 bg-linear-to-r from-blue-600 to-blue-200 text-white flex flex-col justify-center items-center rounded-lg text-center gap-20 lg:flex-row lg:py-10  lg:text-start lg:items-start lg:justify-between'>
+     className='w-full py-2.5 px-3.5 bg-linear-to-r from-blue-600 to-blue-200 text-white flex flex-col justify-center items-center rounded-lg text-center gap-20 lg:flex-row lg:py-10  lg:text-start lg:items-start lg:justify-between overflow-x-hidden'>
       <div className='flex-1'>
 
 

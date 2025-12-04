@@ -39,7 +39,7 @@ function Nabbar({showLogin}) {
       <div className='flex  justify-between max-w-7xl items-center overflow-hidden p-3 mx-auto'>
 
         <div>
-          <Link to={"/"}><img src={"/logo.svg"} alt="website logo" /></Link>
+          <Link to={"/"}><img src={"/logo.svg"} alt="website logo" className='max-sm:w-24'/></Link>
         </div>
         <div className=' hidden md:flex justify-center items-center gap-5  '>
           <Link to={"/"} className='hover:underline underline-offset-4'>Home</Link>
@@ -58,7 +58,7 @@ function Nabbar({showLogin}) {
            
         </div>
         <button className='cursor-pointer md:hidden' onClick={()=> setMobileopen(!mobileOpen)}>
-        {mobileOpen ? (<X/>) :(<Menu size={20}/>)}  
+        {mobileOpen ? (<X size={20}/>) :(<Menu size={20}/>)}  
         </button>
       </div>
 
@@ -67,7 +67,7 @@ function Nabbar({showLogin}) {
 
     {/* mobile menu */}
   
-            <div className={`fixed bottom-0 w-2/3 bg-white right-0 flex flex-col top-14 items-start p-3 gap-5 border-l border-t border-gray-400 ${background} md:hidden ${mobileOpen ? "translate-0": "translate-x-full"} transition-all duration-300`} ref={mobileview}>
+            <div className={`fixed bottom-0 w-2/3 bg-white right-0 flex flex-col max-sm:top-10 -z-10 top-14 items-start p-3 gap-5 border-l border-t border-gray-400 ${background} md:hidden ${mobileOpen ? "translate-0": "translate-x-full"} transition-all duration-300`} ref={mobileview}>
           <Link to={"/"} onClick={()=> setMobileopen(false)} className='hover:underline underline-offset-4'>Home</Link>
           <Link to={"/car-list"} onClick={()=> setMobileopen(false)}  className='hover:underline underline-offset-4' >Cars</Link>
         {user && <Link to={"/my-booking"}  onClick={()=> setMobileopen(false)}  className='hover:underline underline-offset-4' >My booking</Link>}
