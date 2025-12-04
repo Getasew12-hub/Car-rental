@@ -10,6 +10,7 @@ import { motion } from "motion/react";
 
 function listCarsPage() {
   const searchSuggesion = useRef();
+  const [searchGetload,setSearchGetload]=useState(false);
   const inputSearch = useRef();
   const {
     GetCarList,
@@ -44,15 +45,17 @@ function listCarsPage() {
     async function ListCarconfig() {
 
       if(getSearchLocation && getPickupdate && getReturndate){
-        GetCarByDate(getSearchLocation,getPickupdate,getReturndate);
-    
+        setSearchGetload(true);
+       await GetCarByDate(getSearchLocation,getPickupdate,getReturndate);
+        setSearchGetload(false);
         return;
       }
 
 
       if (getSearchTerm) {
+        setSearchGetload(true);
         await getCarBySearch(getSearchTerm);
-
+        setSearchGetload(false);
         setSearchTerm(getSearchTerm);
       } else {
         setSearchParams({});
@@ -114,7 +117,7 @@ function listCarsPage() {
     ChangeCurrentPage(currentPage + 1);
   }
 
-  if (loading) {
+  if (loading || searchGetload) {
     return (
       <div className="flex justify-center items-center h-screen">
         <Loader size={40} className="animate-spin" />
