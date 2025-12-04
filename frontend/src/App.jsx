@@ -31,7 +31,7 @@ function App() {
 
   if (checkAuth) return <div className='flex justify-center items-center h-screen '><Loader size={45} className='animate-spin'/></div>;
   return (
-    <div>
+    <div className='overflow-x-hidden w-full'>
 
       <ScrollToTop/>
       <Nabbar showLogin={setshowLogin} />

@@ -104,7 +104,7 @@ if (!selectedCar) {
     return getIcon[0].get;
   }
   return (
-    <div className="max-w-6xl mx-auto w-full  py-20 px-2.5 space-y-8">
+    <div className="max-w-6xl mx-auto w-full  py-20 px-2.5 space-y-8 overflow-x-hidden ">
       <button
         onClick={() => history.back()}
         className="flex justify-center items-center cursor-pointer"

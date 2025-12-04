@@ -22,7 +22,7 @@ function homePage() {
   }
 
   return (
-    <div className=''>
+    <div className='overflow-x-hidden w-full'>
        
         <Header/>
       

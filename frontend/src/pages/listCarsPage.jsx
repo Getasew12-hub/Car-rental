@@ -135,7 +135,7 @@ function listCarsPage() {
       initial={{ y: 50,opacity:0 }}
       whileInView={{ y: 0,opacity:1 }}
       transition={{ duration: 0.5,delay:0.2 }}
-       className="flex flex-col justify-center items-center space-y-5 bg-gray-100 py-10 px-2.5 ">
+       className="flex flex-col justify-center items-center space-y-5 bg-gray-100 py-10 px-2.5  ">
         <h2 className="font-bold text-2xl md:text-3xl">Available Cars</h2>
         <p className="text-gray-500">
           Browse our selection of premium vehicles available for your next
